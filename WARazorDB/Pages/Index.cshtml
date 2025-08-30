@@ -2,53 +2,83 @@
 @model WARazorDB.Pages.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Gestor de Tareas";
 }
 
-<h1>Index</h1>
+<div class="content-container">
+    <h1 class="page-title">Gestor de Tareas</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Tarea[0].nombreTarea)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tarea[0].fechaVencimiento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tarea[0].estado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tarea[0].idUsuario)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Tarea) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.nombreTarea)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fechaVencimiento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.estado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.idUsuario)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <a asp-page="Create" class="btn-create">
+        <i class="bi bi-plus-circle"></i> Crear Nueva Tarea
+    </a>
+
+    <div class="table-responsive">
+        <table class="table table-custom">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tarea[0].nombreTarea)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tarea[0].fechaVencimiento)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tarea[0].estado)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tarea[0].idUsuario)
+                    </th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model.Tarea) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nombreTarea)
+                    </td>
+                    <td>
+                        @item.fechaVencimiento.ToString("dd/MM/yyyy")
+                    </td>
+                    <td>
+                        @{
+                            string badgeClass = "badge ";
+                            
+                            switch (item.estado.ToLower())
+                            {
+                                case "pendiente":
+                                    badgeClass += "badge-pending";
+                                    break;
+                                case "en progreso":
+                                    badgeClass += "badge-progress";
+                                    break;
+                                case "completado":
+                                    badgeClass += "badge-completed";
+                                    break;
+                                default:
+                                    badgeClass = "";
+                                    break;
+                            }
+                        }
+                        <span class="@badgeClass">@item.estado</span>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idUsuario)
+                    </td>
+                    <td class="action-links">
+                        <a asp-page="./Edit" asp-route-id="@item.Id" title="Editar">
+                            <i class="bi bi-pencil"></i> Editar
+                        </a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id" title="Detalles">
+                            <i class="bi bi-info-circle"></i> Detalles
+                        </a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id" title="Eliminar">
+                            <i class="bi bi-trash"></i> Eliminar
+                        </a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

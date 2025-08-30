@@ -1,5 +1,20 @@
+/* Variables globales para paleta de colores */
+:root {
+  --dark-purple: #30253E;
+  --sage: #C3C88C;
+  --russian-green: #638B72;
+  --pewter-blue: #80B9B1;
+  --cambridge-blue: #94C7B4;
+  --light-background: #f5f8f6;
+  --light-sage: rgba(195, 200, 140, 0.15);
+  --hover-transition: all 0.3s ease;
+}
+
+/* Estilos de tipografía y configuración básica */
 html {
   font-size: 14px;
+  position: relative;
+  min-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -8,15 +23,549 @@ html {
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
-  margin-bottom: 60px;
+  margin-bottom: 70px;
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: var(--light-background);
+  line-height: 1.6;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--dark-purple);
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--russian-green);
+  text-decoration: none;
+  transition: var(--hover-transition);
+}
+
+a:hover {
+  color: var(--pewter-blue);
+  text-decoration: none;
+}
+
+/* Estilos para el navbar */
+.navbar-custom {
+  background-color: var(--dark-purple) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.7rem 1rem;
+}
+
+.navbar-custom .navbar-brand {
+  color: var(--sage) !important;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  font-size: 1.3rem;
+  transition: var(--hover-transition);
+  padding: 8px 15px;
+  border-radius: 4px;
+}
+
+.navbar-custom .navbar-brand:hover {
+  color: var(--dark-purple) !important;
+  background-color: var(--sage);
+  transform: translateY(-2px);
+}
+
+.navbar-custom .nav-link {
+  color: var(--sage) !important;
+  font-weight: 500;
+  position: relative;
+  margin: 0 3px;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: var(--hover-transition);
+}
+
+.navbar-custom .nav-link:hover {
+  color: var(--dark-purple) !important;
+  background-color: var(--sage);
+  transform: translateY(-2px);
+}
+
+.navbar-custom .navbar-toggler {
+  border-color: var(--sage);
+  transition: var(--hover-transition);
+}
+
+.navbar-custom .navbar-toggler:hover {
+  background-color: rgba(195, 200, 140, 0.2);
+}
+
+.navbar-custom .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(195, 200, 140, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Estilos para contenedores y secciones */
+.container {
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.content-container {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  position: relative;
+  border-top: 4px solid var(--russian-green);
+}
+
+.section-divider {
+  height: 3px;
+  background: linear-gradient(to right, var(--russian-green), var(--cambridge-blue));
+  margin: 25px 0;
+  border-radius: 3px;
+}
+
+/* Estilos para la página principal */
+.page-title {
+  color: var(--dark-purple);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.page-title:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(to right, var(--russian-green), var(--cambridge-blue));
+  border-radius: 2px;
+}
+
+/* Estilos para botones */
+.btn {
+  border-radius: 5px;
+  font-weight: 500;
+  padding: 8px 18px;
+  transition: var(--hover-transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.15rem white, 0 0 0 0.25rem var(--russian-green);
+}
+
+.btn-primary {
+  background-color: var(--russian-green);
+  border-color: var(--russian-green);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #587d65; /* Darker Russian Green */
+  border-color: #587d65;
+}
+
+.btn-secondary {
+  background-color: var(--pewter-blue);
+  border-color: var(--pewter-blue);
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+  background-color: #6ba7a0; /* Darker Pewter Blue */
+  border-color: #6ba7a0;
+}
+
+.btn-danger {
+  background-color: #d9534f;
+  border-color: #d9534f;
+}
+
+.btn-create {
+  background-color: var(--russian-green);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 25px;
+  transition: var(--hover-transition);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-create i {
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+.btn-create:hover {
+  background-color: #587d65; /* Darker Russian Green */
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para enlaces de navegación como "Back to List" */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--dark-purple);
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: var(--hover-transition);
+  margin-top: 20px;
+  text-decoration: none;
+  background-color: var(--light-sage);
+}
+
+.back-link i {
+  margin-right: 8px;
+}
+
+.back-link:hover {
+  background-color: var(--sage);
+  color: var(--dark-purple);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-label {
+  color: var(--dark-purple);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Estilos para formularios */
+.form-control {
+  border-radius: 6px;
+  padding: 10px 15px;
+  border: 1px solid #e0e0e0;
+  transition: var(--hover-transition);
+}
+
+.form-control:focus {
+  border-color: var(--cambridge-blue);
+}
+
+.form-label {
+  color: var(--dark-purple);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.input-group-text {
+  background-color: var(--light-sage);
+  border-color: #e0e0e0;
+  color: var(--dark-purple);
+}
+
+/* Estilos para tablas */
+.table-custom {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.table-responsive {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table-custom thead th {
+  background-color: var(--dark-purple);
+  color: var(--sage);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 15px;
+  border: none;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.table-custom thead th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.table-custom thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+.table-custom tbody tr:nth-child(odd) {
+  background-color: rgba(245, 248, 246, 0.7);
+}
+
+.table-custom tbody tr:nth-child(even) {
+  background-color: white;
+}
+
+.table-custom td {
+  padding: 14px 15px;
+  border-top: 1px solid #eaefed;
+  vertical-align: middle;
+}
+
+.table-custom tbody tr:hover {
+  background-color: rgba(99, 139, 114, 0.08); /* Russian Green with opacity */
+}
+
+.table-custom tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+.table-custom tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+/* Estilos para badges */
+.badge {
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-pending {
+  background-color: #fbedee;
+  color: #a94442;
+}
+
+.badge-progress {
+  background-color: #fff8e6;
+  color: #8a6d3b;
+}
+
+.badge-completed {
+  background-color: #edf7ed;
+  color: #3c763d;
+}
+
+/* Estilos para enlaces de acción */
+.action-links {
+  white-space: nowrap;
+}
+
+.action-links a {
+  color: var(--dark-purple);
+  text-decoration: none;
+  margin: 0 6px;
+  font-weight: 500;
+  transition: var(--hover-transition);
+  display: inline-flex;
+  align-items: center;
+}
+
+.action-links a i {
+  margin-right: 5px;
+  font-size: 0.9rem;
+}
+
+.action-links a:hover {
+  color: var(--russian-green);
+}
+
+/* Estilos para cards y elementos de detalle */
+.detail-card {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: var(--hover-transition);
+}
+
+.detail-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.detail-card .card-header {
+  background-color: var(--dark-purple);
+  color: var(--sage);
+  font-weight: 600;
+  padding: 15px 20px;
+  border-bottom: none;
+}
+
+.detail-card .card-body {
+  padding: 20px;
+}
+
+/* Estilos para footer */
+footer {
+  background-color: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 15px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer a {
+  color: var(--russian-green);
+}
+
+footer a:hover {
+  color: var(--pewter-blue);
+}
+
+/* Estilos para páginas de confirmación (delete) */
+.confirmation-container {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.confirmation-icon {
+  font-size: 3rem;
+  color: #d9534f;
+  margin-bottom: 20px;
+}
+
+.confirmation-message {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: var(--dark-purple);
+}
+
+/* Estilos para mensajes de alerta */
+.alert {
+  border: none;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.alert-success {
+  background-color: rgba(148, 199, 180, 0.2);
+  border-left: 4px solid var(--cambridge-blue);
+  color: #3c763d;
+}
+
+.alert-danger {
+  background-color: rgba(217, 83, 79, 0.1);
+  border-left: 4px solid #d9534f;
+  color: #a94442;
+}
+
+.alert-info {
+  background-color: rgba(128, 185, 177, 0.2);
+  border-left: 4px solid var(--pewter-blue);
+  color: #31708f;
+}
+
+/* Estilos para animaciones y efectos */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.content-container {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Estilos para validaciones de formulario */
+.input-validation-error {
+  border-color: #d9534f !important;
+  box-shadow: 0 0 0 0.2rem rgba(217, 83, 79, 0.25) !important;
+}
+
+.field-validation-error {
+  color: #d9534f;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 0.4rem;
+  font-weight: 500;
+  position: relative;
+  padding-left: 20px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.field-validation-error::before {
+  content: "\f071";
+  font-family: "bootstrap-icons";
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+
+.validation-summary-errors {
+  background-color: rgba(217, 83, 79, 0.1);
+  border-left: 4px solid #d9534f;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.validation-summary-errors ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.validation-summary-errors ul li {
+  margin-bottom: 5px;
+}
+
+.valid {
+  border-color: #5cb85c !important;
+}
+
+.form-control:focus.valid {
+  box-shadow: 0 0 0 0.2rem rgba(92, 184, 92, 0.25) !important;
+}
+
+/* Estilo para el tooltip de validación */
+.validation-tooltip {
+  position: absolute;
+  background-color: #d9534f;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  z-index: 5;
+  max-width: 250px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.validation-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 15px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #d9534f transparent transparent transparent;
+}
+
