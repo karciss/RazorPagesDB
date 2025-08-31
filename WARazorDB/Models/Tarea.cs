@@ -55,7 +55,6 @@ namespace WARazorDB.Models
                 
             string input = value.ToString();
             
-            // Lista de caracteres especiales prohibidos
             string[] prohibitedChars = { "@", "#", "$", "%", "&", "*", "^", "~", "`", "<", ">", "{", "}", "[", "]", "|", "\\", "/" };
             
             foreach (var character in prohibitedChars)

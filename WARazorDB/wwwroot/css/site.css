@@ -1,4 +1,3 @@
-/* Variables globales para paleta de colores */
 :root {
   --dark-purple: #30253E;
   --sage: #C3C88C;
@@ -10,7 +9,6 @@
   --hover-transition: all 0.3s ease;
 }
 
-/* Estilos de tipografía y configuración básica */
 html {
   font-size: 14px;
   position: relative;
@@ -123,7 +121,7 @@ a:hover {
   border-radius: 3px;
 }
 
-/* Estilos para la página principal */
+/* Estilos para principal */
 .page-title {
   color: var(--dark-purple);
   font-size: 2.2rem;
@@ -171,7 +169,7 @@ a:hover {
 }
 
 .btn-primary:hover, .btn-primary:focus {
-  background-color: #587d65; /* Darker Russian Green */
+  background-color: #587d65;
   border-color: #587d65;
 }
 
@@ -181,7 +179,7 @@ a:hover {
 }
 
 .btn-secondary:hover, .btn-secondary:focus {
-  background-color: #6ba7a0; /* Darker Pewter Blue */
+  background-color: #6ba7a0;
   border-color: #6ba7a0;
 }
 
@@ -212,13 +210,13 @@ a:hover {
 }
 
 .btn-create:hover {
-  background-color: #587d65; /* Darker Russian Green */
+  background-color: #587d65;
   color: white;
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Estilos para enlaces de navegación como "Back to List" */
+/* Estilos para enlaces Back to List */
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -330,7 +328,7 @@ a:hover {
 }
 
 .table-custom tbody tr:hover {
-  background-color: rgba(99, 139, 114, 0.08); /* Russian Green with opacity */
+  background-color: rgba(99, 139, 114, 0.08); 
 }
 
 .table-custom tbody tr:last-child td:first-child {
@@ -366,7 +364,12 @@ a:hover {
   color: #3c763d;
 }
 
-/* Estilos para enlaces de acción */
+.badge-cancelled {
+  background-color: #e0e0e0;
+  color: #555555;
+}
+
+/* Estilos para enlaces*/
 .action-links {
   white-space: nowrap;
 }
@@ -441,7 +444,7 @@ footer a:hover {
   color: var(--pewter-blue);
 }
 
-/* Estilos para páginas de confirmación (delete) */
+/* Estilos de delete */
 .confirmation-container {
   text-align: center;
   padding: 30px 20px;
@@ -546,7 +549,7 @@ footer a:hover {
   box-shadow: 0 0 0 0.2rem rgba(92, 184, 92, 0.25) !important;
 }
 
-/* Estilo para el tooltip de validación */
+/* Estilo para el tooltip de validacion */
 .validation-tooltip {
   position: absolute;
   background-color: #d9534f;

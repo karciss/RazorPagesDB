@@ -8,6 +8,24 @@
 <div class="content-container">
     <h1 class="page-title">Gestor de Tareas</h1>
 
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
     <a asp-page="Create" class="btn-create">
         <i class="bi bi-plus-circle"></i> Crear Nueva Tarea
     </a>
@@ -54,6 +72,9 @@
                                     break;
                                 case "completado":
                                     badgeClass += "badge-completed";
+                                    break;
+                                case "cancelado":
+                                    badgeClass += "badge-cancelled";
                                     break;
                                 default:
                                     badgeClass = "";
